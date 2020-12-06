@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ergo.clients.Response;
 import com.ergo.clients.ResponseBuilder;
 import com.ergo.clients.entities.Client;
-
-import services.ClientsService;
+import com.ergo.clients.services.ClientService;
 
 /**
  * 
@@ -24,15 +23,15 @@ import services.ClientsService;
  */
 @RestController
 @RequestMapping("/api")
-public class ClientsController {
+public class ClientController {
 
 	@Autowired
-	private ClientsService clientsService;
+	private ClientService clientService;
 	
 	@GetMapping("/clients")
 	public ResponseEntity<Response<?>> retrieveClients() {
 		try {
-			List<Client> clients = clientsService.retrieveClients();
+			List<Client> clients = clientService.retrieveClients();
 			return new ResponseBuilder<Client>("success", "clients", clients).build();
 		} catch (Exception e) {
 			return new ResponseBuilder<Client>("error", "clients", HttpStatus.NOT_FOUND, e.getMessage()).build();
