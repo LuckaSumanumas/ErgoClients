@@ -48,7 +48,7 @@ public class Client {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
+	} 
 	public LocalDate getBirthDate() {
 		return birthDate;
 	}

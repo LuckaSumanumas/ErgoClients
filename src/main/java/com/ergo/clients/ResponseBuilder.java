@@ -25,9 +25,6 @@ public class ResponseBuilder<T> {
 		this.status = status;
 		this.httpStatus = HttpStatus.OK;
 		this.type = type;
-//		List<T> entities = new ArrayList<T>();
-//		entities.add(entity);
-//		this.entities = entities;
 		this.entity = entity;
 		this.entities = null;
 		this.message = null;
@@ -50,21 +47,6 @@ public class ResponseBuilder<T> {
 		this.entities = null;
 		this.message = message;
 	}
-	
-//	public ResponseBuilder status(String status) {
-//        this.status = status;
-//        return this;
-//    }
-//	
-//	public ResponseBuilder entities(List<?> entities) {
-//        this.entities = entities;
-//        return this;
-//    }
-//	
-//	public ResponseBuilder message(String message) {
-//        this.message = message;
-//        return this;
-//    }
 	
 	public ResponseEntity<Response<?>> build() {
 		Response<T> response;

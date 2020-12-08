@@ -17,6 +17,9 @@ import com.ergo.clients.entities.Client;
 @Repository
 public interface ClientRepository extends CrudRepository<Client, Integer> {
 
+	List<Client> findByBirthDate(
+			@Param("birthDate") LocalDate birthDate);
+	
 	List<Client> findByBirthDateAfterAndBirthDateBefore(
 			@Param("startDate") LocalDate startDate,@Param("endDate") LocalDate endDate);
 }
